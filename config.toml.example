@@ -1,0 +1,31 @@
+datadir = "/root/.mawari"
+network  = "testnet"
+
+[node]
+key     = "/root/.mawari/node.key"
+moniker = "carlys-mawari"
+gpu     = "auto"   # auto-detect; can pin a specific device index
+
+[render]
+max_concurrent_sessions = 2
+quality_preset         = "balanced"  # balanced | quality | perf
+
+[rpc]
+listen   = "127.0.0.1:7333"
+user     = "mawari"
+password = "CHANGE_ME"
+
+[p2p]
+listen = "0.0.0.0:7334"
+seeds = [
+  "seed-1.testnet.mawari.net:7334",
+  "seed-2.testnet.mawari.net:7334",
+]
+peers_max = 50
+
+[telemetry]
+prometheus_listen = "127.0.0.1:9103"
+
+[log]
+level = "info"
+file  = "/var/log/mawari.log"

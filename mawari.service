@@ -1,0 +1,17 @@
+[Unit]
+Description=Mawari DePIN node (3D streaming)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/local/bin/mawari-node run --config /root/.mawari/config.toml
+Restart=always
+RestartSec=5
+LimitNOFILE=65536
+StandardOutput=append:/var/log/mawari.log
+StandardError=append:/var/log/mawari.log
+
+[Install]
+WantedBy=multi-user.target
